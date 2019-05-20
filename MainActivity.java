@@ -44,7 +44,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void displayBMI(float bmi){
-        String bmilabel = "" + bmi;
+        String bmilabel = "";
+        if(bmi<15)
+            bmilabel = "Severely Underweight, go and see a doctor";
+        else if(bmi>15&& bmi<18)
+            bmilabel = "Underweight";
+        else if(bmi>18&& bmi<25)
+            bmilabel = "You are normal";
+        else
+            bmilabel = "Overweight, hit the gym";
+
+        bmilabel = bmi + "\n" + bmilabel;
         result.setText(bmilabel);
     }
 }
